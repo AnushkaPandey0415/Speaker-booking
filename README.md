@@ -2,10 +2,10 @@
 The Speaker Booking System is a comprehensive platform designed for users to create, manage, and book speaker profiles. The system ensures secure access through verified credentials and provides functionality for speaker profile creation, session pricing, and speaker listing.
 
 FEATURES:
-User Authentication
-Speaker Profile Management
-Dynamic Speaker Listing: Using Typescript for easy integration as it is a high level programming language.
-Responsive User Interface:Built with HTML, CSS, and JavaScript for user interactions.
+User Authentication, 
+Speaker Profile Management, 
+Dynamic Speaker Listing: Using Typescript for easy integration as it is a high level programming language, 
+Responsive User Interface:Built with HTML, CSS, and JavaScript for user interactions, 
 Backend API:Implemented using Node.js, JWT token and Express.
 
 DEPENDENCIES:
