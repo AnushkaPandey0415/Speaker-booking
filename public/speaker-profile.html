@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Profile - Speaker Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Speaker Profile Setup</h1>
+    </header>
+
+    <main>
+        <section id="speaker-profile-section">
+            <h2>Create Your Profile</h2>
+            <form id="speaker-profile-form">
+                <input type="text" id="expertise" placeholder="Expertise" required>
+                <input type="number" id="price_per_session" placeholder="Price Per Session" required>
+                <button type="submit">Save Profile</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = 'login.html'; // If not logged in, redirect to login
+            }
+    
+            // Handle profile form submission
+            document.getElementById('speaker-profile-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+    
+                const expertise = document.getElementById('expertise').value;
+                const price_per_session = document.getElementById('price_per_session').value;
+    
+                try {
+                    const response = await fetch('/api/save-speaker-profile', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({ expertise, price_per_session })
+                    });
+    
+                    const data = await response.json();
+    
+                    if (response.ok && data.success) {
+                        alert('Profile saved successfully!');
+                        window.location.href = 'dashboard.html'; // Redirect to dashboard after saving
+                    } else {
+                        alert(data.message || 'Error saving profile.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An unexpected error occurred. Please try again.');
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

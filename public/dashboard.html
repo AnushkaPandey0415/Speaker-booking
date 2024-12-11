@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Speaker Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Speaker Booking</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="speaker-profile.html">Speaker Profile</a></li>
+                <li><a href="booking.html">Book a Session</a></li>
+                <li><a href="login.html" id="logout-link">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="user-profile">
+            <h2>Your Profile</h2>
+            <div id="profile-info"></div> <!-- Show user info here -->
+        </section>
+
+        <section id="speakers-list">
+            <h2>Available Speakers</h2>
+            <div id="speakers-list-container"></div> <!-- Show list of speakers -->
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+    
+</body>
+</html>

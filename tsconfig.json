@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Modules */
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "typeRoots": ["node_modules/@types", "src/types"],
+
+    /* Emit */
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "removeComments": true,
+
+    /* Type Checking */
+    "strict": true,
+    "skipLibCheck": true,
+
+    /* JavaScript Support */
+    "allowJs": true,
+    "checkJs": false,
+
+    /* Interop Constraints */
+    "isolatedModules": true,
+
+    /* Other configurations */
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+
+    /* Additional Types */
+    "types": ["node", "express"]  // This ensures that express types are included globally
+  },
+  "include": [
+    "src/**/*.ts","public/**/*"
+, "types.d.ts"  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "files": ["types.d.ts"]
+}
